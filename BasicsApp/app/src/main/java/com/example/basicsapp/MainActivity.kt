@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.basicsapp.ui.components.CardGreeting
 import com.example.basicsapp.ui.theme.BasicsAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,54 +24,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    CardGreeting("Android")
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun MyApp(
-    modifier: Modifier = Modifier,
-    names: List<String> = listOf("World", "Compose")
-) {
-    Surface(
-        modifier = modifier,
-        color = MaterialTheme.colorScheme.background
-    ) {
-        Column(Modifier.padding(vertical = 4.dp)) {
-            for (name in names) {
-                Greeting(name = name)
-            }
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Surface(
-        color = MaterialTheme.colorScheme.primary,
-        modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)) {
-        Row(modifier = Modifier.padding(24.dp)) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(text = "Hello, ")
-                Text(text = name)
-            }
-            ElevatedButton(
-                onClick = { /* TODO */ }
-            ) {
-                Text("Show more")
-            }
-        }
-    }
-    }
-
-
-@Preview(showBackground = true, widthDp = 320)
-@Composable
-fun DefaultPreview() {
-    BasicsAppTheme {
-        MyApp()
     }
 }
