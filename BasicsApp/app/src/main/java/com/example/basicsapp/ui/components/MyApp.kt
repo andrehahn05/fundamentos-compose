@@ -18,7 +18,9 @@ import com.example.basicsapp.ui.theme.BasicsAppTheme
 
 @Composable
 fun MyApp(modifier: Modifier = Modifier) {
+
     var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
+
     Surface(
         modifier = modifier,
         color = MaterialTheme.colorScheme.background,
@@ -34,10 +36,10 @@ fun MyApp(modifier: Modifier = Modifier) {
 @Composable
 private fun Greetings(
     modifier: Modifier = Modifier,
-    names: List<String> = List(100) {"$it"}
+    names: List<String> = List(1000) { "$it" }
 ) {
     LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
-        items (items = names) { name ->
+        items(items = names) { name ->
             CardGreeting(name = name)
         }
     }

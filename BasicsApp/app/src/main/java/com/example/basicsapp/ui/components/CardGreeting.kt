@@ -14,7 +14,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-
 @Composable
 fun CardGreeting(name: String) {
 
@@ -36,7 +35,7 @@ fun CardGreeting(name: String) {
             Column(
                 Modifier
                     .weight(1f)
-                    .padding(bottom = extraPadding)
+                    .padding(bottom = extraPadding.coerceAtLeast(0.dp))
             ) {
                 Text(text = "Hello, ")
                 Text(text = name)
